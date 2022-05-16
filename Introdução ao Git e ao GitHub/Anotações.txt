@@ -1,2 +1,85 @@
-Link para download do Git: https://git-scm.com/downloads
-O Git Bash é um terminal extendido para otimizar o uso do Git.
+Primeiros passos para clonar o repositório localmente (baixar o repositório):
+
+1º  - escolha uma pasta que queira clonar o repositório, exemplo documentos/Dio/Teste;
+2ºa - Abra o git bash na pasta selecionada, botão direito do mouse, selecione a opção git bash here;
+2ºb - Caso não tenha a opção no 2 A, abra o git bash pelo pesquisa de programas do Windows, utilize o comando CD para ir até a pasta desejada;
+3º  - Utilize o comando "git clone https://github.com/JosianeCMagalhaes/dio-desafio-github-primeiro-repositorio.git" (sem as aspas) para clonar o repositório.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Primeiro commit:
+
+1º  - Altere o arquivo desejado, ou crie um novo arquivo no repositório;
+2º  - Verifique se o git detectou as mudanças no repositório com o comando git status;
+3ºa - Caso apenas a sua mudança tenha sido detectada pode-se utilizar o comando "git add ." (sem as aspas);
+3ºb - Caso contrário utilizar "git add Nome_Do_Arquivo_Que_Voce_Deseja_Enviar.txt" (sem as aspas, adicionar o nome do arquivo igual como aparecer no git status);
+4º  - Crie seu commit com o comando "git commit -m "mensagem do commit que deve estar entre aspas" (sem as aspas do início e fim);
+5º  - Dar o comando "git pull" (sem aspas) sempre após criar o commit;
+6º  - Utilize o comando "git push -u origin main" (sem aspas) para enviar o commit para a Branch.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Git global setup (Configuração de usuário):
+
+git config --global user.name "username" (nome que será exibido no commit);
+git config --global user.email "email" (email vinculado a sua conta do Github).
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Tirar acidentalmente arquivos adicionados da área de stage do GIT:
+
+1º Através do "git status" verificar o nome exato do arquivo que deseja retirar;
+2ºa - Utilizar o comando "git restore --staged arquivo.txt" substítir apenas o arquivo.txt pelo nome do 1º passo
+2ºb - Caso queira retirar tudo da área de stage utilizar "git restore --staged ." (sem as aspas).
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Reverter um commit na REMOTE (remote = nuvem, commits que foram feito push para branch):
+
+1º Descubra o hash do commit, utilize o comando "git log" para listar os últimos commits,
+	escreva "more" para ir exibindo mais commits se necessário, 
+	caso queira sair da lista digita "qa";
+2º Utilize o commando "git revert hashEncontradoNoPasso1" (sem as aspas).
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Git Clone:
+
+cd C:\Users\documents\  (ir para a pasta que deseja);
+git clone https.. (https do repositório).
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Git Commit:
+
+git add README.md;
+git add .    (adiciona todos os arquivos alterados).
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Fazer o commit após adicionar os arquivos desejados:
+
+git commit -m "add README";
+git pull;
+git push -u origin master (master deve ser substituído pelo nome da branch se diferente, ex.: main).
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Push an existing folder as a new git repo or to a existent git repo
+cd existing_folder
+
+git init
+git remote add origin https:...
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Push an existing Git repository
+cd existing_repo
+
+git remote rename origin old-origin
+git remote add origin https://git.com/
+git push -u origin --all
+git push -u origin --tags
